@@ -1,0 +1,4 @@
+name: demo
+description: 一个库
+dependencies: 
+    http: ^0.12.2
