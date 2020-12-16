@@ -295,3 +295,11 @@ class Person2 extends Animal with Eat, Sleep {
 ```
 
 混合的菱形继承问题：编译后，最近原则调用方法。先找自身的，再找with后面，从后往前以此调用。
+
+### 多核CPU的利用
+Isolate概念 隔离
+Dart是单线程的，线程所在的空间被称为Isolate。比如Flutter中有一个Root
+Isolate，负责运行Flutter代码，例如UI渲染，用户交互等。
+在Isolate中，资源隔离做的非常好，每个Isolate有自己的Event Loop和Queue。
+- Isolate之间不共享任何资源，只能依靠消息机制通信，因此也就没有资源抢占问题。
+这不就是多进程方案！
