@@ -23,6 +23,28 @@ class JLHomePage extends StatefulWidget{
 }
 
 class _JLHomePageState extends State<JLHomePage> {
+  /*
+  * controller
+  * 1. 可以设置默认offset
+  * 2. 监听滑动，也可以监听默认位置
+  * NotificationListener，本质是一个Widget
+  * 1. 监听开始滑动和结束滑动
+  *
+  * */
+  ScrollController _controller = ScrollController(initialScrollOffset: 300);
+  bool _isShowFloatingBtn = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _controller.addListener(() {
+      print("监听到滚动。。。");
+      setState(() {
+        _isShowFloatingBtn = _controller.offset >= 1000;
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     /*
@@ -34,15 +56,41 @@ class _JLHomePageState extends State<JLHomePage> {
       appBar: AppBar(
         title: Text("flutter程序"),
       ),
-      body: ListView.builder(
-        controller: ,
-          itemBuilder: (BuildContext ctx, int index) {
-            return ListTile(
-              leading: Icon(Icons.mail),
-              title: Text("邮箱 $index"),
-            );
+      body: NotificationListener(
+        onNotification: (ScrollNotification notification) {
+          print("notification 监听到滚动。。。");
+          if (notification is ScrollStartNotification) {
+            print("开始滚动");
+          } else if (notification is ScrollUpdateNotification) {
+            print("正在滚动。。。最大滚动范围${notification.metrics.maxScrollExtent},当前滚动的位置${notification.metrics.pixels}");
+          } else if (notification is ScrollEndNotification){
+            print("结束滚动");
           }
+
+          return true;
+        },
+        child: ListView.builder(
+          controller: _controller,
+            itemBuilder: (BuildContext ctx, int index) {
+              return ListTile(
+                leading: Icon(Icons.mail),
+                title: Text("邮箱 $index"),
+              );
+            }
+        ),
       ),
+      floatingActionButton: _isShowFloatingBtn ? FloatingActionButton(
+          child: Icon(Icons.arrow_upward),
+          onPressed: (){
+            _controller.animateTo(0, duration: Duration(seconds: 1), curve: Curves.easeIn);
+          },
+    ) : null,
     );
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _controller.dispose();
   }
 }
