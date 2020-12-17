@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class JLHomePage extends StatefulWidget{
+class JLHomePage extends StatefulWidget {
   @override
   _JLHomePageState createState() => _JLHomePageState();
 }
@@ -37,7 +37,6 @@ class _JLHomePageState extends State<JLHomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _controller.addListener(() {
       print("监听到滚动。。。");
@@ -46,6 +45,7 @@ class _JLHomePageState extends State<JLHomePage> {
       });
     });
   }
+
   @override
   Widget build(BuildContext context) {
     /*
@@ -63,8 +63,9 @@ class _JLHomePageState extends State<JLHomePage> {
           if (notification is ScrollStartNotification) {
             print("开始滚动");
           } else if (notification is ScrollUpdateNotification) {
-            print("正在滚动。。。最大滚动范围${notification.metrics.maxScrollExtent},当前滚动的位置${notification.metrics.pixels}");
-          } else if (notification is ScrollEndNotification){
+            print(
+                "正在滚动。。。最大滚动范围${notification.metrics.maxScrollExtent},当前滚动的位置${notification.metrics.pixels}");
+          } else if (notification is ScrollEndNotification) {
             print("结束滚动");
           }
 
@@ -77,20 +78,22 @@ class _JLHomePageState extends State<JLHomePage> {
                 leading: Icon(Icons.mail),
                 title: Text("邮箱 $index"),
               );
-            }
-        ),
+            }),
       ),
-      floatingActionButton: _isShowFloatingBtn ? FloatingActionButton(
-        child: Icon(Icons.arrow_upward),
-        onPressed: (){
-          _controller.animateTo(0, duration: Duration(seconds: 1), curve: Curves.easeIn);
-        },
-      ) : null,
+      floatingActionButton: _isShowFloatingBtn
+          ? FloatingActionButton(
+              child: Icon(Icons.arrow_upward),
+              onPressed: () {
+                _controller.animateTo(0,
+                    duration: Duration(seconds: 1), curve: Curves.easeIn);
+              },
+            )
+          : null,
     );
   }
+
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _controller.dispose();
   }

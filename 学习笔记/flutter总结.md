@@ -26,10 +26,20 @@ flutter 使用总结
 ```
 
 ## IDE
+### androidStudio
+
+安装插件：Dart+Flutter
 
 hot reload 主要是执行main 中的 build方法，非build内的方法不被执行，比如：计数。
 
 hot restart 会执行所有的方法
+
+### vsCode
+
+安装插件：Dart+Flutter
+
+配置测试机：cmd+p 输入>flutter 选择Flutter Select Device或点击右下角，选择目标设备。
+等待右下角的配置生效，点击右上角，小的start三角按钮，编译运行程序
 
 ### MaterialUI 
 
