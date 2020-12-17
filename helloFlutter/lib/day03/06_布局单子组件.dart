@@ -1,6 +1,38 @@
 import 'package:flutter/material.dart';
 
-import '01_文本组件.dart';
+main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "app title",
+      home: JLHomePage(),
+    );
+  }
+}
+
+class JLHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("基础Widget"),
+      ),
+      body: JLHomeContent(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () => print("浮动按钮"),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
+  }
+}
+
+class JLHomeContent extends StatefulWidget {
+  @override
+  _JLHomeContentState createState() => _JLHomeContentState();
+}
 
 class _JLHomeContentState extends State<JLHomeContent> {
   @override
@@ -18,27 +50,22 @@ class _JLHomeContentState extends State<JLHomeContent> {
 //      transform: Matrix4.rotationZ(100),// 形变
       decoration: BoxDecoration(
           color: Colors.red,
-          border: Border.all(
-              width: 5,
-              color: Colors.purple
-          ),
+          border: Border.all(width: 5, color: Colors.purple),
 //        borderRadius: BorderRadius.circular(100),
           boxShadow: [
             BoxShadow(
               color: Colors.orange,
               offset: Offset(10, 10),
-              spreadRadius: 5,// 偏移量
-              blurRadius: 5,// 模糊度
+              spreadRadius: 5, // 偏移量
+              blurRadius: 5, // 模糊度
             ),
             BoxShadow(
               color: Colors.blue,
               offset: Offset(-10, 10),
-              spreadRadius: 5,// 偏移量
-              blurRadius: 5,// 模糊度
+              spreadRadius: 5, // 偏移量
+              blurRadius: 5, // 模糊度
             )
-          ]
-      ),
-
+          ]),
     );
   }
 }
@@ -52,14 +79,33 @@ class PaddingDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Padding(// padding 设置间距
+        Padding(
+          // padding 设置间距
 //          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),// 垂直，水平
 //          padding: const EdgeInsets.fromLTRB(0, 5, 0, 10), // 左上→↓
-          padding: const EdgeInsets.only(bottom: 10),// 单独设置一个方位
-          child: Text("你好啊，范金龙", style: TextStyle(fontSize: 30, backgroundColor: Colors.red,),),
+          padding: const EdgeInsets.only(bottom: 10), // 单独设置一个方位
+          child: Text(
+            "你好啊，范金龙",
+            style: TextStyle(
+              fontSize: 30,
+              backgroundColor: Colors.red,
+            ),
+          ),
         ),
-        Text("你好啊，范金龙", style: TextStyle(fontSize: 30, backgroundColor: Colors.red,),),
-        Text("你好啊，范金龙", style: TextStyle(fontSize: 30, backgroundColor: Colors.red,),),
+        Text(
+          "你好啊，范金龙",
+          style: TextStyle(
+            fontSize: 30,
+            backgroundColor: Colors.red,
+          ),
+        ),
+        Text(
+          "你好啊，范金龙",
+          style: TextStyle(
+            fontSize: 30,
+            backgroundColor: Colors.red,
+          ),
+        ),
       ],
     );
   }
@@ -76,11 +122,15 @@ class AlignDemo extends StatelessWidget {
       color: Colors.red,
       height: 200,
       width: 200,
-      child: Align(// Center 就是Align 的子类
-        alignment: Alignment(1,1),
-        widthFactor: 5,// 相对于原始Widget的倍数
+      child: Align(
+        // Center 就是Align 的子类
+        alignment: Alignment(1, 1),
+        widthFactor: 5, // 相对于原始Widget的倍数
         heightFactor: 5,
-        child: Icon(Icons.pets,size: 50,),
+        child: Icon(
+          Icons.pets,
+          size: 50,
+        ),
       ),
     );
   }
