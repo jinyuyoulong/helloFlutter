@@ -1,6 +1,25 @@
 [TOC]
 
 flutter 使用总结
+### 快捷键
+
+stl 创建StatelessWidget类
+
+alt+enter 包一层部件
+
+cmd+alt+B 查看抽象类的子类。
+
+alt+enter 将statelessWidget 转换为StatefulWidget
+
+alt+enter 快速导入头文件
+
+alt+cmd+M 抽取组件代码生产组件方法
+
+alt+cmd+W 抽取组件代码生成组件类 快捷键冲突，可以右键重构选项。
+
+cmd+alt+L 格式化代码
+
+
 
 ## 安装
 
@@ -576,23 +595,6 @@ flutter packages get 更新一定要在终端执行更新，as中无法中断进
 
 删除文件 flutter/bin/cache/lockfile,可以解放进程
 
-
-
-### 快捷键
-
-stl 创建StatelessWidget类
-
-alt+enter 包一层部件
-
-cmd+alt+B 查看抽象类的子类。
-
-alt+enter 将statelessWidget 转换为StatefulWidget
-
-alt+cmd+M 抽取组件代码生产组件方法
-
-alt+cmd+W 抽取组件代码生成组件类 快捷键冲突，可以右键重构选项。
-
-cmd+alt+L 格式化代码
 
 ### 辅助工具
 

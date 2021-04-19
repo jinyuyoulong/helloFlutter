@@ -58,12 +58,13 @@ class _JLContentBodyState extends State<JLContentBody> {
         inter: InterceptorsWrapper(onRequest: (request) {
       return request;
     })).then((value) {
+      print("====");
       print(value);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Text("data");
+    return Text("dio log data");
   }
 }
