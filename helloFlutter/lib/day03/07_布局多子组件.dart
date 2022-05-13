@@ -51,9 +51,8 @@ class _JLHomeContentState extends State<JLHomeContent> {
 * */
     return Container(
       child: Stack(
+        clipBehavior: Clip.none,
         alignment: AlignmentDirectional.center,
-//        fit: StackFit.expand,
-        overflow: Overflow.visible,
         children: <Widget>[
           Image(image: AssetImage("assets/images/a_dot_ham.png")),
           Positioned(
@@ -91,7 +90,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
 // Row 进阶知识
 class RowDemo2 extends StatelessWidget {
   const RowDemo2({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override
@@ -139,7 +138,7 @@ class RowDemo2 extends StatelessWidget {
 
 class ColumDemo extends StatelessWidget {
   const ColumDemo({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override
@@ -203,7 +202,7 @@ Row基本使用
     * */
 class RowDemo extends StatelessWidget {
   const RowDemo({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override

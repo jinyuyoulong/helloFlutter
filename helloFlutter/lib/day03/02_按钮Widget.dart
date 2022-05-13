@@ -37,20 +37,25 @@ class _JLHomeContentState extends State<JLHomeContent> {
     return Column(
       children: <Widget>[
         // 1. RaisedButton
-        RaisedButton(
+        ElevatedButton(
           child: Text("RaisedButton 高地按钮"),
-          color: Colors.grey,
-          textColor: Colors.white,
+          style: ButtonStyle(
+            // foregroundColor: MaterialStateProperty.all(Colors.grey),
+            backgroundColor: MaterialStateProperty.all(Colors.grey),
+            textStyle: MaterialStateProperty.all(TextStyle(color: Colors.white))
+          ),
           onPressed: ()=> print("dd"),
         ),
         // FlatButton
-        FlatButton(
-          color: Colors.orange,
+        TextButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.orange)
+          ),
           child: Text("平坦的Flat 按钮"),
           onPressed: ()=>print("flat click"),
         ),
         // OutlineButton 边框按钮
-        OutlineButton(
+        OutlinedButton(
           child: Text("Outline button 边框按钮"),
           onPressed: ()=>print("边框按钮"),
         ),

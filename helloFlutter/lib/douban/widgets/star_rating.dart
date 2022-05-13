@@ -11,14 +11,14 @@ class StartRating extends StatefulWidget {
   Widget selectedImage;
 
   StartRating({
-    @required this.rating,
+    required this.rating,
     this.maxRating = 10,
     this.count = 5,
     this.size = 30,
     this.unselectedColor = const Color(0xffbbbbbb),
     this.selectedColor = const Color(0xffff0000),
-    Widget unselectedImage,
-    Widget selectedImage
+    required Widget unselectedImage,
+    required Widget selectedImage
   }) : unselectedImage = unselectedImage ?? Icon(Icons.star_border, color: unselectedColor, size: size),
         selectedImage = selectedImage ?? Icon(Icons.star, color: selectedColor, size: size);
 

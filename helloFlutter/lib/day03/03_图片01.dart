@@ -47,7 +47,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
 }
 class ImageDemo01 extends StatelessWidget {
   const ImageDemo01({
-    Key key,
+    required Key key,
     @required this.imgURL,
   }):super(key:key);
   final imgURL;

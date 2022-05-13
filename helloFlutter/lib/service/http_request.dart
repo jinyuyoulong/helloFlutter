@@ -9,22 +9,27 @@ class HttpRequest {
   static final Dio dio = Dio(baseOptions);
 
   static Future<T> request<T>(String url,
-      {String method = "get",
-      Map<String, dynamic> parames,
-      Interceptor inter}) async {
+      {
+        String method = "get",
+        required Map<String, dynamic>  parames,
+        required Interceptor inter
+      }) async {
     // 1. 创建dio
     // 私有参数配置
     final Options options = Options(method: method);
 
-    final Interceptor defaultInter = InterceptorsWrapper(onRequest: (request) {
+    final Interceptor defaultInter = InterceptorsWrapper(onRequest: (request, requestInterceptorHandler) {
       print("请求拦截 ");
-      return request;
-    }, onResponse: (response) {
+      print("${request.method} | ${request.path}");
+      return requestInterceptorHandler.next(request);
+    }, onResponse: (response,responseInterceptorHandler) {
       print("响应拦截");
-      return response;
-    }, onError: (err) {
+      print('${response.statusCode} ${response.statusCode} ${response.data}');
+      return responseInterceptorHandler.next(response);
+    }, onError: (err,handler) {
       print("错误拦截");
-      return err;
+      print(err.message);
+      return handler.next(err);
     });
     List<Interceptor> iterable = [defaultInter];
     if (iterable != null) {

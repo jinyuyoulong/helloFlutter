@@ -45,8 +45,8 @@ class ImageExtensionDemo extends StatelessWidget {
   //    1. 占位图的问题
 //  2. 图片缓存：flutter默认给图片做缓存，最多1000张，最大100M。
   const ImageExtensionDemo({
-    Key key,
-    @required this.imgURL,
+    required Key key,
+    required this.imgURL,
   }) : super(key: key);
 
   final String imgURL;
@@ -64,7 +64,7 @@ class ImageExtensionDemo extends StatelessWidget {
 
 class ButtonExtensionDemo extends StatelessWidget {
   const ButtonExtensionDemo({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override

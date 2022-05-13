@@ -72,7 +72,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
 
 class PaddingDemo extends StatelessWidget {
   const PaddingDemo({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override
@@ -113,7 +113,7 @@ class PaddingDemo extends StatelessWidget {
 
 class AlignDemo extends StatelessWidget {
   const AlignDemo({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override

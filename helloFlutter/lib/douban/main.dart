@@ -31,16 +31,16 @@ class JLHomePage extends StatelessWidget {
 
 class DashedLine extends StatelessWidget {
   final Axis axis;
-  final double dashedHeight;
-  final double dashedWidth;
-  final int count;
-  final Color color;
+  final double? dashedHeight;
+  final double? dashedWidth;
+  final int? count;
+  final Color? color;
   DashedLine({
   this.axis = Axis.vertical,
     this.dashedHeight,
-    this.dashedWidth,
-    this.count,
-    this.color
+     this.dashedWidth,
+     this.count,
+     this.color
 });
   @override
   Widget build(BuildContext context) {

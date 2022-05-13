@@ -55,8 +55,8 @@ class _JLContentBodyState extends State<JLContentBody> {
     // 真实开发是：参数-> 拦截器(封装)
 //    只要用到第三方库，建议都做一层封装
     HttpRequest.request("https://httpbin.org/get", parames: {"name": "any"},
-        inter: InterceptorsWrapper(onRequest: (request) {
-      return request;
+        inter: InterceptorsWrapper(onRequest: (request, handler) {
+      return handler.next(request);
     })).then((value) {
       print("====");
       print(value);

@@ -32,7 +32,7 @@ class JLHomePage extends StatelessWidget{
 
 class CustomScrollMixView extends StatelessWidget {
   const CustomScrollMixView({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

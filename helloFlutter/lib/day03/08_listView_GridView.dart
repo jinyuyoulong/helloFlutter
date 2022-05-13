@@ -53,7 +53,7 @@ class JLContentBody extends StatelessWidget{
 
 class GridViewDemo2 extends StatelessWidget {
   const GridViewDemo2({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override
@@ -76,7 +76,7 @@ class GridViewDemo2 extends StatelessWidget {
 
 class GridViewDemo1 extends StatelessWidget {
   const GridViewDemo1({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override
@@ -102,7 +102,7 @@ class GridViewDemo1 extends StatelessWidget {
 
 class ListViewSeparated extends StatelessWidget {
   const ListViewSeparated({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override
@@ -128,7 +128,7 @@ class ListViewSeparated extends StatelessWidget {
 
 class ListViewBuilder extends StatelessWidget {
   const ListViewBuilder({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override
@@ -145,7 +145,7 @@ class ListViewBuilder extends StatelessWidget {
 
 class ListViewDemo1 extends StatelessWidget {
   const ListViewDemo1({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override
