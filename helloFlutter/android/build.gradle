@@ -1,26 +1,20 @@
 buildscript {
     ext.kotlin_version = '1.6.10'
     repositories {
-        maven{ url 'https://maven.aliyun.com/repository/public'}  // 修改1
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        google()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.1'
+        classpath 'com.android.tools.build:gradle:7.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 allprojects {
     repositories {
-//        google()
-//        jcenter()
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
-
+        google()
+        mavenCentral()
     }
 }
 
@@ -30,13 +24,6 @@ subprojects {
 }
 subprojects {
     project.evaluationDependsOn(':app')
-}
-task showRepos {
-    doLast {
-        repositories.each {
-            println "repository: ${it.name} ('${it.url}')"
-        }
-    }
 }
 
 task clean(type: Delete) {

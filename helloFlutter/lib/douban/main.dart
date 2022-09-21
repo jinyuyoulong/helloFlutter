@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloFlutter/douban/widgets/star_rating.dart';
+import 'package:hello_flutter/douban/widgets/star_rating.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

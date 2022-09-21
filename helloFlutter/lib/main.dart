@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:helloFlutter/service/http_request.dart';
+import 'package:hello_flutter/service/http_request.dart';
 
 main() => runApp(MyApp());
 
@@ -56,8 +56,8 @@ class _JLContentBodyState extends State<JLContentBody> {
 //    只要用到第三方库，建议都做一层封装
     HttpRequest.request("https://httpbin.org/get", parames: {"name": "any"},
         inter: InterceptorsWrapper(onRequest: (request, handler) {
-      return handler.next(request);
-    })).then((value) {
+          return handler.next(request);
+        })).then((value) {
       print("====");
       print(value);
     });

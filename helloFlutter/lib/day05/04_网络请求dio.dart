@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:helloFlutter/service/http_request.dart';
+import 'package:hello_flutter/service/http_request.dart';
 
 main() => runApp(MyApp());
 
