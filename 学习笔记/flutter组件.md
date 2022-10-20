@@ -17,11 +17,11 @@
   - Checkbox
 
 - 布局组件
-  - 线性 Row
-  - 线性 Column
-  - 弹性 Flex
+  - 线性 Row 行 X轴
+  - 线性 Column 列 Y轴
+  - 弹性 Flex 盒 伸缩到父视图
   - 弹性 Expanded
-  - 层叠 Stack
+  - 层叠 Stack 栈 Z轴
   - 层叠 IndexedStack
   - 层叠 Positioned
   - 流式 Flow
@@ -77,7 +77,7 @@
   - 包与插件
   - 国际化
   - 数据库缓存
-  - Redux
+  - GetX
 ```
 
 ## 文本组件

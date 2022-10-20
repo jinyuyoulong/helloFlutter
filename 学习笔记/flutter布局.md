@@ -110,7 +110,6 @@ class ButtonExtensionDemo extends StatelessWidget {
               	color: Colors.blue,
                 child: Text("登 录",
                      style: TextStyle(fontSize: 20,color: Colors.white),),
-
             )
       ],
     );

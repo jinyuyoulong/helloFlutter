@@ -219,7 +219,7 @@ main(List<String> args) {
 
 ## 类
 
-单继承，使用混合方式实现多继承mixin
+### 单继承，使用混合方式实现多继承mixin
 
 ```dart
 
