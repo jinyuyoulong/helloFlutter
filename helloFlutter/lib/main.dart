@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hello_flutter/getX/test_page/test_page_view.dart';
 import 'package:hello_flutter/service/http_request.dart';
 
 main() => runApp(MyApp());
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: JLHomePage(),
     );
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
 }
 
 class JLHomePage extends StatelessWidget {
+  const JLHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +70,6 @@ class _JLContentBodyState extends State<JLContentBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Text("dio log data");
+    return TestPagePage();
   }
 }
