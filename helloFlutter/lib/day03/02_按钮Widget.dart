@@ -37,7 +37,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
     return Column(
       children: <Widget>[
         // 1. RaisedButton
-        ElevatedButton(
+        ElevatedButton(// 漂浮"按钮
           child: Text("RaisedButton 高地按钮"),
           style: ButtonStyle(
             // foregroundColor: MaterialStateProperty.all(Colors.grey),
@@ -46,35 +46,37 @@ class _JLHomeContentState extends State<JLHomeContent> {
           ),
           onPressed: ()=> print("dd"),
         ),
+        ElevatedButton.icon(
+          icon: const Icon(Icons.send,color: Colors.red,),
+          label: const Text("发送"),
+          style: ButtonStyle(
+            // foregroundColor: MaterialStateProperty.all(Colors.grey),
+              backgroundColor: MaterialStateProperty.all(Colors.grey),
+              textStyle: MaterialStateProperty.all(TextStyle(color: Colors.white))
+          ),
+
+          // ignore: avoid_print
+          onPressed: ()=> print("dd"),
+        ),
         // FlatButton
         TextButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.orange)
           ),
-          child: Text("平坦的Flat 按钮"),
+          child: const Text("平坦的Flat 按钮"),
           onPressed: ()=>print("flat click"),
         ),
         // OutlineButton 边框按钮
         OutlinedButton(
-          child: Text("Outline button 边框按钮"),
+          child: const Text("Outline button 边框按钮"),
           onPressed: ()=>print("边框按钮"),
         ),
+        IconButton(
+            onPressed: (){},
+            icon: const Icon(Icons.favorite,color: Colors.red,)),
         // 4. floatingActionButton 浮动按钮
         // 5. 自定义button：图标-文字-背景-圆角
-        FlatButton(
-          color: Colors.purple,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8)
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Icon(Icons.favorite,color: Colors.red,),
-              Text("love范")
-            ],
-          ),
-          onPressed: (){},
-        )
+
       ],
     );
   }

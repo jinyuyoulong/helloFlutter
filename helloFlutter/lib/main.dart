@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:hello_flutter/service/http_request.dart';
 
 main() => runApp(MyApp());
@@ -11,6 +10,8 @@ main() => runApp(MyApp());
 * 无状态Widget: StatelessWidget 内容是确定没有状态(data)的改变的
 * */
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

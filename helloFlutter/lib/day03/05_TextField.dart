@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 main()=>runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -79,7 +78,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
               // double.infinity 代表最大，能填充多大填多大
               width: double.infinity,
               height: 40,
-              child: FlatButton(
+              child: ElevatedButton(
                 onPressed: (){
                   final username = usernameTextEditingController.text;
                   final password = passwordTextEditingController.text;
@@ -89,7 +88,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
 
                   });
                 },
-                color: Colors.blue,
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
                 child: Text("登 录",style: TextStyle(fontSize: 20,color: Colors.white),),
 
               ),

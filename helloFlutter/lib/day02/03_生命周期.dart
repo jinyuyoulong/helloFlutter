@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 
-main()=>runApp(MyApp());
+main()=>runApp(const MyApp());
+
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: JLHomePage(),
     );
   }
 }
 
 class JLHomePage extends StatefulWidget {
+  const JLHomePage({super.key});
+
 
   @override
+  // ignore: library_private_types_in_public_api
   _JLHomePageState createState() => _JLHomePageState();
 }
 
@@ -23,7 +29,10 @@ class _JLHomePageState extends State<JLHomePage> {
   }
 }
 class JLHomeDemo extends StatefulWidget {
+  const JLHomeDemo({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _JLHomeDemoState createState() => _JLHomeDemoState();
 }
 
@@ -36,7 +45,7 @@ class _JLHomeDemoState extends State<JLHomeDemo> {
         title: Text( "商品列表"),
       ),
       body: buildColumn(),
-      floatingActionButton: RaisedButton(
+      floatingActionButton: ElevatedButton(
           child: Icon(Icons.add),
           onPressed: (){
             setState(() {
@@ -115,7 +124,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
     print("5. 调用build ");
     return Column(
       children: <Widget>[
-        RaisedButton(
+        ElevatedButton(
             child: Icon(Icons.add),
             onPressed: (){
 //            setState之后自动标记需要重新build，这就是为什么状态更新为什么必须在setState中

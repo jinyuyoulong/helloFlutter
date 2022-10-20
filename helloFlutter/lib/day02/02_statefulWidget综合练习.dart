@@ -60,18 +60,18 @@ class _JLHomeContentState extends State<JLHomeContent> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        RaisedButton(
+        ElevatedButton(
             child: Text("+", style: TextStyle(fontSize: 20, color: Colors.white),),
-            color: Colors.red,
+            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
             onPressed: (){
               setState(() {
 //                相当于匿名函数，这里，外边设置++也可以
                 _counter ++;
               });
             }),
-        RaisedButton(
+        ElevatedButton(
             child: Text("-",style: TextStyle(fontSize: 20, color: Colors.white)),
-            color: Colors.blue,
+            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue)),
             onPressed: (){
               setState(() {
                 _counter --;

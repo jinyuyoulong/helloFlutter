@@ -59,7 +59,7 @@ class GridViewDemo2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(// 设置最大宽度，自动计算个数
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(// 设置最大宽度，自动计算个数
         maxCrossAxisExtent: 100,
         crossAxisSpacing: 8,
         mainAxisSpacing: 8,

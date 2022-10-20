@@ -77,21 +77,20 @@ class ButtonExtensionDemo extends StatelessWidget {
         ButtonTheme(// 处理默认的最小宽高
           minWidth: 30,
           height: 10,
-          child: FlatButton(
+          child: ElevatedButton(
 //            清除内边距
-              padding: EdgeInsets.all(0),
+//               padding: EdgeInsets.all(0),
 //              清除外边距
-              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              color: Colors.red,
+//               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+//               color: Colors.red,
               onPressed: (){},
               child: Text("FaltBtn1")
           ),
         ),
-        FlatButton(
-
+        ElevatedButton(
 //          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           onPressed: (){},
-          color: Colors.red,
+          style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.red)),
           child: Text("FaltB  tn2"),
         ),
       ],
