@@ -10,6 +10,6 @@ class Person {
 // 如下常用方式
 // 这种初始化方法可以使用表达式
 // 另外一种命名可选参数的初始化方式只能使用直接赋值
-  Person(this.name, {int age}) : this.age = age ?? 10 {}
+  Person(this.name, {int? age}) : this.age = age ?? 10 {}
   // Person(this.name,{int age = 10})
 }

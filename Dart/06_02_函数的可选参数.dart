@@ -13,11 +13,11 @@ void sayHello1(String name) {
   print(name);
 }
 
-void sayHello2(String name, [int age, double height]) {
+void sayHello2(String name, [int? age, double? height]) {
   print(name);
 }
 
 // 命名可选参数
-void sayHello3(String name, {int age, double height}) {
+void sayHello3(String name, {int? age, double? height}) {
   print(name);
 }

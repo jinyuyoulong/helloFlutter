@@ -6,7 +6,7 @@ main(List<String> args) {
     final url = "https://httpbin.org/ip";
     Future<HttpRequest> request = HttpRequest.request(url);
     request.then((value) {
-      print(jsonDecode(value.responseText)['origin']);
+      print(jsonDecode(value.responseText ?? "")['origin']);
     }).catchError((error) => print(error));
   }
 

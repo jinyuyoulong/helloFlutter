@@ -38,7 +38,7 @@ main(List<String> args) {
 class Person {
   final String name;
   // 类属性，静态属性
-  static int age;
+  static int? age;
   // 类方法
   static void callClass() {
     print("person");
@@ -50,9 +50,9 @@ class Person {
 
 // dart 没有方法重载
 class Person1 {
-  String name;
-  int age;
-  double height;
+  late String name;
+  int? age;
+  double? height;
 
   // 同名方法为构造函数
   Person1(int age, String name) {
@@ -78,7 +78,7 @@ class Person1 {
 }
 
 class Worker extends Person1 {
-  int salary;
+  late int salary;
   // 初始化列表
   // 构造函数的重定向 Person(String name): this._internal(name)
   Worker(int age, String name, int salary) : super(age, name) {
@@ -90,13 +90,13 @@ class Worker extends Person1 {
   }
 }
 
-class Eat {
+mixin class Eat {
   void eat() {
     print("eat");
   }
 }
 
-class Sleep {
+mixin Sleep {
   void sleep() {
     print("sleeep");
   }
@@ -116,8 +116,8 @@ abstract class Animal {
 // 多继承 混合
 // dart 没有 interface等关键字声明接口，而是默认所有类都是隐式接口
 class Person2 extends Animal with Eat, Sleep {
-  String name;
-  int age;
+  String name = "";
+  int age = 0;
   // 同名方法为构造函数
   Person2(int age, String name) {
     this.age = age;

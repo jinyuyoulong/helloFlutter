@@ -13,6 +13,7 @@ main(List<String> args) {
  * 2. async函数返回的结果必须是一个Future
  */
 Future getNetworkData() async {
-  await sleep(Duration(seconds: 3));
+  // sleep
+  await Future.delayed(Duration(seconds: 3));
   return "响应";
 }

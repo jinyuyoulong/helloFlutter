@@ -20,7 +20,7 @@ class Person {
 // 一但实现构造函数，默认的就没有了
   factory Person.withName(String name) {
     if (_nameCache.containsKey(name)) {
-      return _nameCache[name];
+      return _nameCache[name]!;
     } else {
       final p = Person(name, "default");
       _nameCache[name] = p;
@@ -30,7 +30,7 @@ class Person {
 
   factory Person.withColor(String color) {
     if (_colorCache.containsKey(color)) {
-      return _colorCache[color];
+      return _colorCache[color]!;
     } else {
       final p = Person("name", color);
       _colorCache[color] = p;
