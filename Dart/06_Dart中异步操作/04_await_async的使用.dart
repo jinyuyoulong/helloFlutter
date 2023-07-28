@@ -1,5 +1,4 @@
 // await async 是Dart中的关键字，一般是返回Future
-import 'dart:io';
 
 main(List<String> args) {
   print("main start");

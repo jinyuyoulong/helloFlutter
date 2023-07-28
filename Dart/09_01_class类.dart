@@ -2,7 +2,6 @@
 // Object和dynamic很类似
 // dart 没有 interface等关键字声明接口，而是默认所有类都是隐式接口
 // 当把类当做接口使用，那么类必须实现接口类的所有方法
-import 'dart:html';
 
 main(List<String> args) {
   // final p1 = Person('fan');
