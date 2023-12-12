@@ -9,7 +9,7 @@ main(List<String> args) {
   // 2.2 final 声明常量
   final forever = "永恒";
   // 2.3 const 声明常量
-  const jingtai = "静态";
+  const constStr = "静态";
 
   // 2.4 final const 的区别
   // const必须赋值 常量值（编译期间需要有一个确定的值
