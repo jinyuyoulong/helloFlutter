@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:hello_flutter/getx/counter_get/view.dart';
+import 'package:hello_flutter/page/list_view.dart';
 import 'package:hello_flutter/service/http_echo_model.dart';
 import 'package:hello_flutter/service/http_request.dart';
 
@@ -56,6 +56,6 @@ class _JLContentBodyState extends State<JLContentBody> {
 
   @override
   Widget build(BuildContext context) {
-    return CounterGetPage();
+    return MainListView();
   }
 }

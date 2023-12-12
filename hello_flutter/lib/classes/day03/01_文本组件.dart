@@ -1,45 +1,31 @@
 import 'package:flutter/material.dart';
-//main()=>runApp(MyApp());
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: JLHomePage(),
-    );
-  }
-}
+class TextViewPage extends StatelessWidget {
+  const TextViewPage({super.key});
 
-class JLHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("基础的Widget 控件demo") ,
-
-      ) ,
-      body: JLHomeContent(),
-    );
-  }
-}
-
-class JLHomeContent extends StatefulWidget {
-  @override
-  _JLHomeContentState createState() => _JLHomeContentState();
-}
-
-class _JLHomeContentState extends State<JLHomeContent> {
-  @override
-  Widget build(BuildContext context) {
-
-    return  Text.rich(TextSpan(
-//      text: "富文本",
+      appBar: AppBar(title: const Text("Text 组件"),),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          TextSpan(text: "hello world", style: TextStyle(color: Colors.red)),
-          TextSpan(text: "hello world", style: TextStyle(color: Colors.green)),
-          WidgetSpan(child: Icon(Icons.favorite,color: Colors.red,)),// 图片
-          TextSpan(text: "hello world", style: TextStyle(color: Colors.blue)),
-        ]
-    ));
+          Text.rich(TextSpan(
+//      text: "富文本",
+              children: [
+                TextSpan(
+                    text: "hello world", style: TextStyle(color: Colors.red)),
+                TextSpan(
+                    text: "hello world", style: TextStyle(color: Colors.green)),
+                WidgetSpan(child: Icon(Icons.favorite, color: Colors.red,)), // 图片
+                TextSpan(
+                    text: "hello world", style: TextStyle(color: Colors.blue)),
+              ]
+          )),
+          buildText()
+        ],
+      ),
+    );
+
   }
 
   Text buildText() {
@@ -57,4 +43,3 @@ class _JLHomeContentState extends State<JLHomeContent> {
     );
   }
 }
-
