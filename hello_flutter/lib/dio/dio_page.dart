@@ -10,7 +10,7 @@ class JLHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dio网络请求"),
+        title: Text("demo list"),
       ),
       body: JLContentBody(),
     );
