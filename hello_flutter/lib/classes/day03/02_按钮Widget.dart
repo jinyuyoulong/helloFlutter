@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ButtonsPage extends StatefulWidget {
+  const ButtonsPage({super.key});
+
   @override
   _ButtonsPageState createState() => _ButtonsPageState();
 }
@@ -14,25 +16,25 @@ class _ButtonsPageState extends State<ButtonsPage> {
         children: <Widget>[
           // 1. ElevatedButton
           ElevatedButton(
-            child: Text("ElevatedButton 高地按钮"),
             style: ButtonStyle(
               // foregroundColor: MaterialStateProperty.all(Colors.grey),
                 backgroundColor: MaterialStateProperty.all(Colors.grey),
-                textStyle: MaterialStateProperty.all(TextStyle(color: Colors.white))
+                textStyle: MaterialStateProperty.all(const TextStyle(color: Colors.white))
             ),
             onPressed: ()=> print("dd"),
+            child: const Text("ElevatedButton 高地按钮"),
           ),
           // TextButton
           TextButton(
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.orange)
             ),
-            child: Text("平坦的Flat 按钮"),
+            child: const Text("平坦的Flat 按钮"),
             onPressed: ()=>print("flat click"),
           ),
           // OutlineButton 边框按钮
           OutlinedButton(
-            child: Text("Outline button 边框按钮"),
+            child: const Text("Outline button 边框按钮"),
             onPressed: ()=>print("边框按钮"),
           ),
           // 4. floatingActionButton 浮动按钮
@@ -42,7 +44,7 @@ class _ButtonsPageState extends State<ButtonsPage> {
                 borderRadius: BorderRadius.circular(8)
             )),
                 backgroundColor: MaterialStateProperty.all(Colors.purple)),
-            child: Row(
+            child: const Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Icon(Icons.favorite,color: Colors.red,),

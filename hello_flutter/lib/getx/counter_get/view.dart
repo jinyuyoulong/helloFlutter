@@ -21,13 +21,13 @@ class CounterGetPage extends StatelessWidget {
         child: Obx(() {
           return Text(
             '点击了${logic.count}次',
-            style: TextStyle(fontSize: 30.0),
+            style: const TextStyle(fontSize: 30.0),
           );
         }),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => logic.increase(),
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

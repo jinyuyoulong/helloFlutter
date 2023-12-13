@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-main() => runApp(MyApp());
+main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "app title",
       home: JLHomePage(),
     );
@@ -14,18 +15,22 @@ class MyApp extends StatelessWidget {
 }
 
 class JLHomePage extends StatelessWidget {
+  const JLHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("基础Widget"),
+        title: const Text("基础Widget"),
       ),
-      body: JLHomeContent(),
+      body: const JLHomeContent(),
     );
   }
 }
 
 class JLHomeContent extends StatefulWidget {
+  const JLHomeContent({super.key});
+
   @override
   _JLHomeContentState createState() => _JLHomeContentState();
 }
@@ -54,20 +59,20 @@ class _JLHomeContentState extends State<JLHomeContent> {
         clipBehavior: Clip.none,
         alignment: AlignmentDirectional.center,
         children: <Widget>[
-          Image(image: AssetImage("assets/images/a_dot_ham.png")),
+          const Image(image: AssetImage("assets/images/a_dot_ham.png")),
           Positioned(
               left: 0,
               right: 0,
               bottom: 0,
               child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
-                  color: Color.fromARGB(100, 100, 100, 100),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  color: const Color.fromARGB(100, 100, 100, 100),
 //                  width: double.infinity,
 //                  height: 30,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text(
+                      const Text(
                         "范金龙最棒",
                         style: TextStyle(color: Colors.white),
                       ),
@@ -75,7 +80,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
                           icon: Icon(Icons.favorite,
                               color: isFavorite ? Colors.white : Colors.red),
                           onPressed: () {
-                            this.setState(() {
+                            setState(() {
                               isFavorite = !isFavorite;
                             });
                           })
@@ -157,7 +162,7 @@ class ColumDemo extends StatelessWidget {
           width: 60,
           height: 80,
           color: Colors.red,
-          child: Text(
+          child: const Text(
             "Hello x",
             style: TextStyle(fontSize: 20),
           ),
@@ -166,7 +171,7 @@ class ColumDemo extends StatelessWidget {
             width: 60,
             height: 70,
             color: Colors.green,
-            child: Text(
+            child: const Text(
               "world x",
               style: TextStyle(fontSize: 30),
             )),
@@ -174,7 +179,7 @@ class ColumDemo extends StatelessWidget {
             width: 60,
             height: 50,
             color: Colors.blue,
-            child: Text(
+            child: const Text(
               "fan x",
               style: TextStyle(fontSize: 40),
             )),
@@ -223,7 +228,7 @@ class RowDemo extends StatelessWidget {
           width: 60,
           height: 80,
           color: Colors.red,
-          child: Text(
+          child: const Text(
             "Hello x",
             style: TextStyle(fontSize: 20),
           ),
@@ -232,7 +237,7 @@ class RowDemo extends StatelessWidget {
             width: 60,
             height: 70,
             color: Colors.green,
-            child: Text(
+            child: const Text(
               "world x",
               style: TextStyle(fontSize: 30),
             )),
@@ -240,7 +245,7 @@ class RowDemo extends StatelessWidget {
             width: 60,
             height: 50,
             color: Colors.blue,
-            child: Text(
+            child: const Text(
               "fan x",
               style: TextStyle(fontSize: 40),
             )),

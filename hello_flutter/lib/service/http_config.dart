@@ -1,4 +1,4 @@
 class HttpConfig {
-  static final String baseUrl = "https://httpbin.org";
-  static final int timeout = 5000;
+  static const String baseUrl = "https://httpbin.org";
+  static const int timeout = 5000;
 }

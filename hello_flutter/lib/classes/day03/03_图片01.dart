@@ -1,66 +1,24 @@
 import 'package:flutter/material.dart';
-main()=>runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "app title",
-      home: JLHomePage(),
-    );
-  }
-}
-class JLHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("基础Widget"),
-      ),
-      body: JLHomeContent(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: ()=>print("浮动按钮"),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-    );
-  }
-}
-class JLHomeContent extends StatefulWidget {
-  @override
-  _JLHomeContentState createState() => _JLHomeContentState();
-}
-
-class _JLHomeContentState extends State<JLHomeContent> {
-  final imgURL =  "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=116882428,1733900798&fm=26&gp=0.jpg";
-  @override
-  Widget build(BuildContext context) {
-    return Image(
-//    1. 在Flutter项目中创建一个文件夹，存储文件
-//    2. 在 pubspec.yaml 进行配置
-//    3. 使用图片
-        image:  AssetImage("assets/images/a_dot_ham.png")
-    );
-  }
-
-}
 class ImageViewPage extends StatelessWidget {
   const ImageViewPage({super.key});
-  final imgURL =  "https://droitimg.bj.bcebos.com/small/2064723282.jpg";
+  final imgURL =  "https://www.baidu.com/img/PCfb_5bf082d29588c07f842ccde3f97243ea.png";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("图片"),),
       body: Column(
         children: [
-          Image(
-//    1. 在Flutter项目中创建一个文件夹，存储文件
-//    2. 在 pubspec.yaml 进行配置
-//    3. 使用图片
+          const Image(
+      /*
+          1. 在Flutter项目中创建一个文件夹，存储文件
+          2. 在 pubspec.yaml 进行配置
+          3. 使用图片
+      */
               image:  AssetImage("assets/images/a_dot_ham.png")
           ),
-          Image.network(imgURL, width: 100.0,),
-          //ImageDemo01(key: key, imgURL: imgURL)
+          // chrome mac desktop 两个平台不能正常显示应该是跨域或支持问题
+          Image.network(imgURL),
+          ImageDemo01(imgURL: imgURL)
         ],
       ),
     );
@@ -68,11 +26,11 @@ class ImageViewPage extends StatelessWidget {
 }
 
 class ImageDemo01 extends StatelessWidget {
-  const ImageDemo01({
-    required Key key,
-    @required this.imgURL,
-  }):super(key:key);
-  final imgURL;
+  // 不可变声明 final const
+  final String imgURL;
+  const ImageDemo01({super.key,
+    required this.imgURL,
+  });
   @override
   Widget build(BuildContext context) {
     return Image(
@@ -86,7 +44,7 @@ class ImageDemo01 extends StatelessWidget {
 //          fitWidth: 宽度一定，高度自适应，
 //        fitHeight: 高度一定，宽度自适应
 //        alignment: Alignment.bottomCenter,
-      alignment: Alignment(0, -1),//取值范围 -1,1 中间位置是0，0  自定义
+      alignment: const Alignment(0, -1),//取值范围 -1,1 中间位置是0，0  自定义
     );
   }
 }

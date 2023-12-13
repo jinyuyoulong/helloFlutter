@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
-main()=>runApp(MyApp());
+main()=>runApp(const MyApp());
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: JLHomePage(),
     );
   }
 }
 
 class JLHomePage extends StatefulWidget {
+  const JLHomePage({super.key});
+
 
   @override
   _JLHomePageState createState() => _JLHomePageState();
@@ -19,10 +23,12 @@ class JLHomePage extends StatefulWidget {
 class _JLHomePageState extends State<JLHomePage> {
   @override
   Widget build(BuildContext context) {
-    return JLHomeDemo();
+    return const JLHomeDemo();
   }
 }
 class JLHomeDemo extends StatefulWidget {
+  const JLHomeDemo({super.key});
+
   @override
   _JLHomeDemoState createState() => _JLHomeDemoState();
 }
@@ -33,11 +39,11 @@ class _JLHomeDemoState extends State<JLHomeDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text( "商品列表"),
+        title: const Text( "商品列表"),
       ),
       body: buildColumn(),
       floatingActionButton: ElevatedButton(
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
           onPressed: (){
             setState(() {
 //              widgets.insert(0,Text("data"));
@@ -75,7 +81,7 @@ class _JLHomeDemoState extends State<JLHomeDemo> {
 //}
 
 class JLHomeContent extends StatefulWidget {
-  JLHomeContent(){
+  JLHomeContent({super.key}){
     print("1.调用JLHomeContent的constructor");
   }
   @override
@@ -116,7 +122,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
     return Column(
       children: <Widget>[
         ElevatedButton(
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
             onPressed: (){
 //            setState之后自动标记需要重新build，这就是为什么状态更新为什么必须在setState中
               setState(() {

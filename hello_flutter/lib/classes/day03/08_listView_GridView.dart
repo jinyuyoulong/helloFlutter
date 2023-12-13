@@ -1,8 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-main() => runApp(MyApp());
+main() => runApp(const MyApp());
 
 /*
 * Widget:
@@ -10,9 +9,11 @@ main() => runApp(MyApp());
 * 无状态Widget: StatelessWidget 内容是确定没有状态(data)的改变的
 * */
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: JLHomePage(),
     );
@@ -20,23 +21,27 @@ class MyApp extends StatelessWidget {
 }
 
 class JLHomePage extends StatelessWidget{
+  const JLHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("第一个flutter程序"),
+        title: const Text("第一个flutter程序"),
       ),
-      body:JLContentBody(),
+      body:const JLContentBody(),
     );
   }
 }
 
 class JLContentBody extends StatelessWidget{
+  const JLContentBody({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(// cell需要时加载
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           crossAxisSpacing: 8,
           mainAxisSpacing: 8,
@@ -59,7 +64,7 @@ class GridViewDemo2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(// 设置最大宽度，自动计算个数
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(// 设置最大宽度，自动计算个数
         maxCrossAxisExtent: 100,
         crossAxisSpacing: 8,
         mainAxisSpacing: 8,
@@ -82,9 +87,9 @@ class GridViewDemo1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8),
       child: GridView(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,// 交叉轴上的个数
             childAspectRatio: .8,// 高度，以宽度的比例确定
             crossAxisSpacing: 8,
@@ -112,7 +117,7 @@ class ListViewSeparated extends StatelessWidget {
         return Text("$index");
       },
       separatorBuilder: (BuildContext context, int index){
-        return Divider(
+        return const Divider(
           color: Colors.red,
           height: 10,// 线占据的高度（很像cell的高度
           indent: 30,// start 边距
@@ -155,10 +160,10 @@ class ListViewDemo1 extends StatelessWidget {
       itemExtent: 100,// 设置水平滚动，需要设置该值
       children: List.generate(100, (index) {
         return ListTile(
-          leading: Icon(Icons.people),
-          trailing: Icon(Icons.delete),
+          leading: const Icon(Icons.people),
+          trailing: const Icon(Icons.delete),
           title: Text("联系人${index+1}"),
-          subtitle: Text("电话号码：18800000000"),
+          subtitle: const Text("电话号码：18800000000"),
         );
       }),
     );

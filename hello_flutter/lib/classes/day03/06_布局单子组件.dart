@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-main() => runApp(MyApp());
+main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: "app title",
       home: JLHomePage(),
     );
@@ -13,15 +15,17 @@ class MyApp extends StatelessWidget {
 }
 
 class JLHomePage extends StatelessWidget {
+  const JLHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("基础Widget"),
+        title: const Text("基础Widget"),
       ),
-      body: JLHomeContent(),
+      body: const JLHomeContent(),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () => print("浮动按钮"),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -30,6 +34,8 @@ class JLHomePage extends StatelessWidget {
 }
 
 class JLHomeContent extends StatefulWidget {
+  const JLHomeContent({super.key});
+
   @override
   _JLHomeContentState createState() => _JLHomeContentState();
 }
@@ -41,10 +47,9 @@ class _JLHomeContentState extends State<JLHomeContent> {
 //      color: Colors.red,
       width: 200,
       height: 200,
-      alignment: Alignment(0, 0),
-      padding: EdgeInsets.all(20),
-      margin: EdgeInsets.all(10),
-      child: Text("hello world"),
+      alignment: const Alignment(0, 0),
+      padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.all(10),
 //      transform: Matrix4.rotationZ(100),
 //      transform: Matrix4.skew(100,50),
 //      transform: Matrix4.rotationZ(100),// 形变
@@ -52,7 +57,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
           color: Colors.red,
           border: Border.all(width: 5, color: Colors.purple),
 //        borderRadius: BorderRadius.circular(100),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.orange,
               offset: Offset(10, 10),
@@ -66,6 +71,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
               blurRadius: 5, // 模糊度
             )
           ]),
+      child: const Text("hello world"),
     );
   }
 }
@@ -77,13 +83,13 @@ class PaddingDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: <Widget>[
         Padding(
           // padding 设置间距
 //          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),// 垂直，水平
 //          padding: const EdgeInsets.fromLTRB(0, 5, 0, 10), // 左上→↓
-          padding: const EdgeInsets.only(bottom: 10), // 单独设置一个方位
+          padding: EdgeInsets.only(bottom: 10), // 单独设置一个方位
           child: Text(
             "你好啊，范金龙",
             style: TextStyle(
@@ -122,7 +128,7 @@ class AlignDemo extends StatelessWidget {
       color: Colors.red,
       height: 200,
       width: 200,
-      child: Align(
+      child: const Align(
         // Center 就是Align 的子类
         alignment: Alignment(1, 1),
         widthFactor: 5, // 相对于原始Widget的倍数

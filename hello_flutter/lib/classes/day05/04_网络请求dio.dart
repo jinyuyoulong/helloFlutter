@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:hello_flutter/service/http_request.dart';
 
-main() => runApp(MyApp());
+main() => runApp(const MyApp());
 
 /*
 * Widget:
@@ -11,9 +10,11 @@ main() => runApp(MyApp());
 * 无状态Widget: StatelessWidget 内容是确定没有状态(data)的改变的
 * */
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: JLHomePage(),
     );
@@ -21,18 +22,22 @@ class MyApp extends StatelessWidget {
 }
 
 class JLHomePage extends StatelessWidget {
+  const JLHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dio网络请求"),
+        title: const Text("Dio网络请求"),
       ),
-      body: JLContentBody(),
+      body: const JLContentBody(),
     );
   }
 }
 
 class JLContentBody extends StatefulWidget {
+  const JLContentBody({super.key});
+
   @override
   _JLContentBodyState createState() => _JLContentBodyState();
 }
@@ -64,6 +69,6 @@ class _JLContentBodyState extends State<JLContentBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Text("data");
+    return const Text("data");
   }
 }

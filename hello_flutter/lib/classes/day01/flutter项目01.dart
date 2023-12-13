@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-main() => runApp(MyApp());
+main() => runApp(const MyApp());
 
 /*
 * Widget:
@@ -8,9 +7,11 @@ main() => runApp(MyApp());
 * 无状态Widget: StatelessWidget 内容是确定没有状态(data)的改变的
 * */
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: JLHomePage(),
     );
@@ -18,18 +19,22 @@ class MyApp extends StatelessWidget {
 }
 
 class JLHomePage extends StatelessWidget{
+  const JLHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("第一个flutter程序"),
+        title: const Text("第一个flutter程序"),
       ),
-      body:JLDayOne(),
+      body:const JLDayOne(),
     );
   }
 }
 
 class JLDayOne extends StatelessWidget{
+  const JLDayOne({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +47,7 @@ class JLDayOne extends StatelessWidget{
               onChanged: (value){
                 print(value);
               }),
-          Text("同意协议")
+          const Text("同意协议")
         ],
 
       ),

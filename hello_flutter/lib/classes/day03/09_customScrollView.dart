@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-main() => runApp(MyApp());
+main() => runApp(const MyApp());
 
 /*
 * Widget:
@@ -9,9 +8,11 @@ main() => runApp(MyApp());
 * 无状态Widget: StatelessWidget 内容是确定没有状态(data)的改变的
 * */
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: JLHomePage(),
     );
@@ -19,13 +20,15 @@ class MyApp extends StatelessWidget {
 }
 
 class JLHomePage extends StatelessWidget{
+  const JLHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("scrollView"),
+        title: const Text("scrollView"),
       ),
-        body: CustomScrollMixView()
+        body: const CustomScrollMixView()
     );
   }
 }
@@ -43,7 +46,7 @@ class CustomScrollMixView extends StatelessWidget {
           pinned: true,// 显示sliver bar头
           expandedHeight: 300,
           flexibleSpace: FlexibleSpaceBar(
-            title: Text("标题"),
+            title: const Text("标题"),
             background: Image.asset("assets/images/a_dot_ham.png", fit: BoxFit.cover,), // 背景图片撑满
           ),
         ),
@@ -56,7 +59,7 @@ class CustomScrollMixView extends StatelessWidget {
               },
               childCount: 10
           ),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 8,
             mainAxisSpacing: 8,
@@ -66,7 +69,7 @@ class CustomScrollMixView extends StatelessWidget {
           delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index){
                 return ListTile(
-                  leading: Icon(Icons.people),
+                  leading: const Icon(Icons.people),
                   title: Text("联系人$index"),
                 );
               },
@@ -80,6 +83,8 @@ class CustomScrollMixView extends StatelessWidget {
 
 // slider的基本使用
 class CoustomScrollView1 extends StatelessWidget{
+  const CoustomScrollView1({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -88,9 +93,9 @@ class CoustomScrollView1 extends StatelessWidget{
 //        只能放 sliverList，sliverGrid, sliverpadding
         SliverSafeArea(
           sliver: SliverPadding(// 添加外边距，并且可以滚动到顶部
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             sliver: SliverGrid(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 8,
                 mainAxisSpacing: 8,

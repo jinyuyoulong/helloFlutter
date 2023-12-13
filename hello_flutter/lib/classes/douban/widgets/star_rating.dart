@@ -10,7 +10,7 @@ class StartRating extends StatefulWidget {
   Widget unselectedImage;
   Widget selectedImage;
 
-  StartRating({
+  StartRating({super.key, 
     required this.rating,
     this.maxRating = 10,
     this.count = 5,
@@ -80,6 +80,6 @@ class JLStarClipper extends CustomClipper<Rect> {
 
   @override
   bool shouldReclip(covariant CustomClipper oldClipper) {
-    return oldClipper != this.width;
+    return oldClipper != width;
   }
 }

@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 
-main()=>runApp(MyApp());
+main()=>runApp(const MyApp());
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: JLHomePage(),
     );
   }
 }
 
 class JLHomePage extends StatelessWidget {
+  const JLHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text( "商品列表"),
+        title: const Text( "商品列表"),
       ),
-      body: JLHomeContent("haha"),
+      body: const JLHomeContent("haha"),
     );
   }
 }
@@ -26,7 +30,7 @@ class JLHomePage extends StatelessWidget {
 //State 是加下划线，状态类，只给Widget内部使用
 class JLHomeContent extends StatefulWidget {
   final String message;
-  JLHomeContent(this.message);
+  const JLHomeContent(this.message, {super.key});
 
   @override
   _JLHomeContentState createState() => _JLHomeContentState();
@@ -49,7 +53,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
         mainAxisAlignment: MainAxisAlignment.center,//主轴居中
         children: <Widget>[
           _getButtons(),
-          Text("当前计数:$_counter",style: TextStyle(fontSize: 25),),
+          Text("当前计数:$_counter",style: const TextStyle(fontSize: 25),),
           Text("传过来的信息:${widget.message}",)
         ],
       ),
@@ -61,23 +65,23 @@ class _JLHomeContentState extends State<JLHomeContent> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         ElevatedButton(
-            child: Text("+", style: TextStyle(fontSize: 20, color: Colors.white),),
             style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
             onPressed: (){
               setState(() {
 //                相当于匿名函数，这里，外边设置++也可以
                 _counter ++;
               });
-            }),
+            },
+            child: const Text("+", style: TextStyle(fontSize: 20, color: Colors.white),)),
         ElevatedButton(
-            child: Text("-",style: TextStyle(fontSize: 20, color: Colors.white)),
             style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue)),
             onPressed: (){
               setState(() {
                 _counter --;
               });
 
-            }),
+            },
+            child: const Text("-",style: TextStyle(fontSize: 20, color: Colors.white))),
       ],
     );
   }

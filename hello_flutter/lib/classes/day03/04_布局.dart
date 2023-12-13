@@ -1,53 +1,30 @@
 import 'package:flutter/material.dart';
-main()=>runApp(MyApp());
+class LayoutDemoPage extends StatelessWidget {
+  final imgURL =  "https://www.baidu.com/img/PCfb_5bf082d29588c07f842ccde3f97243ea.png";
+  const LayoutDemoPage({super.key});
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "app title",
-      home: JLHomePage(),
-    );
-  }
-}
-class JLHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("基础Widget"),
+      appBar: AppBar(title: const Text("demo"),),
+      body: Column(
+        children: [
+          const ButtonExtensionDemo(),
+          ImageExtensionDemo(imgURL: imgURL),
+          const IconExtensionDemo()
+        ],
+
       ),
-      body: JLHomeContent(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: ()=>print("浮动按钮"),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
-class JLHomeContent extends StatefulWidget {
-  @override
-  _JLHomeContentState createState() => _JLHomeContentState();
-}
-
-class _JLHomeContentState extends State<JLHomeContent> {
-  final imgURL =  "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=116882428,1733900798&fm=26&gp=0.jpg";
-  @override
-  Widget build(BuildContext context) {
-    return Text("dd");
-
-  }
-
-}
-
 class ImageExtensionDemo extends StatelessWidget {
   //    1. 占位图的问题
 //  2. 图片缓存：flutter默认给图片做缓存，最多1000张，最大100M。
   const ImageExtensionDemo({
-    required Key key,
+    super.key,
     required this.imgURL,
-  }) : super(key: key);
+  });
 
   final String imgURL;
 
@@ -55,17 +32,16 @@ class ImageExtensionDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInImage(
 //      设置过渡动画时间
-        fadeOutDuration: Duration(milliseconds: 1),
-        fadeInDuration: Duration(milliseconds: 1),
-        placeholder: AssetImage("assets/images/a_dot_ham.png"),
-        image: NetworkImage(imgURL));
+        fadeOutDuration: const Duration(milliseconds: 1),
+        fadeInDuration: const Duration(milliseconds: 1),
+        placeholder: const AssetImage("assets/images/a_dot_ham.png"),
+        image: NetworkImage(imgURL) 
+    );
   }
 }
 
 class ButtonExtensionDemo extends StatelessWidget {
-  const ButtonExtensionDemo({
-    required Key key,
-  }) : super(key: key);
+  const ButtonExtensionDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -80,12 +56,12 @@ class ButtonExtensionDemo extends StatelessWidget {
           child: TextButton(
             style: ButtonStyle(
               //            清除内边距
-                padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+                padding: MaterialStateProperty.all(const EdgeInsets.all(0)),
                 //              清除外边距
                 tapTargetSize:  MaterialTapTargetSize.shrinkWrap,
                 backgroundColor: MaterialStateProperty.all(Colors.red)),
               onPressed: (){},
-              child: Text("FaltBtn1")
+              child: const Text("FaltBtn1")
           ),
         ),
         TextButton(
@@ -93,7 +69,7 @@ class ButtonExtensionDemo extends StatelessWidget {
 //          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           onPressed: (){},
           style: ButtonStyle(foregroundColor: MaterialStateProperty.all(Colors.red)),
-          child: Text("FaltB  tn2"),
+          child: const Text("FaltB  tn2"),
         ),
       ],
     );
@@ -101,6 +77,8 @@ class ButtonExtensionDemo extends StatelessWidget {
 }
 
 class IconExtensionDemo extends StatelessWidget {
+  const IconExtensionDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     //Icon 是字体图标
@@ -110,7 +88,7 @@ class IconExtensionDemo extends StatelessWidget {
 //    return Icon(Icons.pets, size: 300,color: Colors.orange,);
 //    return Icon(IconData(0xe91d,fontFamily: 'MaterialIcons') , size: 300,color: Colors.orange,);
 //  1. Text 中不能直接使用编码，需要转换 0xe91d-> unicode编码
-    return Text("\ue91d",style: TextStyle(fontSize: 100,color: Colors.orange,fontFamily: 'MaterialIcons'),);
+    return const Text("\ue91d",style: TextStyle(fontSize: 100,color: Colors.orange,fontFamily: 'MaterialIcons'),);
   }
 }
 

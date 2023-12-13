@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
-main() => runApp(MyApp());
+main() => runApp(const MyApp());
 
 /*
 * Widget:
@@ -9,9 +8,11 @@ main() => runApp(MyApp());
 * 无状态Widget: StatelessWidget 内容是确定没有状态(data)的改变的
 * */
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: JLHomePage(),
     );
@@ -19,6 +20,8 @@ class MyApp extends StatelessWidget {
 }
 
 class JLHomePage extends StatefulWidget {
+  const JLHomePage({super.key});
+
   @override
   _JLHomePageState createState() => _JLHomePageState();
 }
@@ -32,7 +35,7 @@ class _JLHomePageState extends State<JLHomePage> {
   * 1. 监听开始滑动和结束滑动
   *
   * */
-  ScrollController _controller = ScrollController(initialScrollOffset: 300);
+  final ScrollController _controller = ScrollController(initialScrollOffset: 300);
   bool _isShowFloatingBtn = false;
 
   @override
@@ -55,7 +58,7 @@ class _JLHomePageState extends State<JLHomePage> {
   * */
     return Scaffold(
       appBar: AppBar(
-        title: Text("flutter程序"),
+        title: const Text("flutter程序"),
       ),
       body: NotificationListener(
         onNotification: (ScrollNotification notification) {
@@ -75,17 +78,17 @@ class _JLHomePageState extends State<JLHomePage> {
             controller: _controller,
             itemBuilder: (BuildContext ctx, int index) {
               return ListTile(
-                leading: Icon(Icons.mail),
+                leading: const Icon(Icons.mail),
                 title: Text("邮箱 $index"),
               );
             }),
       ),
       floatingActionButton: _isShowFloatingBtn
           ? FloatingActionButton(
-              child: Icon(Icons.arrow_upward),
+              child: const Icon(Icons.arrow_upward),
               onPressed: () {
                 _controller.animateTo(0,
-                    duration: Duration(seconds: 1), curve: Curves.easeIn);
+                    duration: const Duration(seconds: 1), curve: Curves.easeIn);
               },
             )
           : null,
