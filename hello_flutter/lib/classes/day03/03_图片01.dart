@@ -43,8 +43,30 @@ class _JLHomeContentState extends State<JLHomeContent> {
     );
   }
 
-
 }
+class ImageViewPage extends StatelessWidget {
+  const ImageViewPage({super.key});
+  final imgURL =  "https://droitimg.bj.bcebos.com/small/2064723282.jpg";
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text("图片"),),
+      body: Column(
+        children: [
+          Image(
+//    1. 在Flutter项目中创建一个文件夹，存储文件
+//    2. 在 pubspec.yaml 进行配置
+//    3. 使用图片
+              image:  AssetImage("assets/images/a_dot_ham.png")
+          ),
+          Image.network(imgURL, width: 100.0,),
+          //ImageDemo01(key: key, imgURL: imgURL)
+        ],
+      ),
+    );
+  }
+}
+
 class ImageDemo01 extends StatelessWidget {
   const ImageDemo01({
     required Key key,

@@ -1,31 +1,5 @@
 import 'package:flutter/material.dart';
-main()=>runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "app title",
-      home: JLHomePage(),
-    );
-  }
-}
-class JLHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("基础Widget"),
-      ),
-      body: ButtonsPage(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: ()=>print("浮动按钮"),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-    );
-  }
-}
 class ButtonsPage extends StatefulWidget {
   @override
   _ButtonsPageState createState() => _ButtonsPageState();
