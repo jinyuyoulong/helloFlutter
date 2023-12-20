@@ -1,90 +1,65 @@
 import 'package:flutter/material.dart';
 
-main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class SingleLayoutWidget extends StatefulWidget {
+  const SingleLayoutWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: "app title",
-      home: JLHomePage(),
-    );
-  }
+  _SingleLayoutWidgetState createState() => _SingleLayoutWidgetState();
 }
 
-class JLHomePage extends StatelessWidget {
-  const JLHomePage({super.key});
-
+class _SingleLayoutWidgetState extends State<SingleLayoutWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("基础Widget"),
-      ),
-      body: const JLHomeContent(),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () => print("浮动按钮"),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-    );
-  }
-}
+      appBar: AppBar(title: const Text("布局单子组件"),),
+      body: Column(
 
-class JLHomeContent extends StatefulWidget {
-  const JLHomeContent({super.key});
-
-  @override
-  _JLHomeContentState createState() => _JLHomeContentState();
-}
-
-class _JLHomeContentState extends State<JLHomeContent> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
+        children: [
+          Container(
 //      color: Colors.red,
-      width: 200,
-      height: 200,
-      alignment: const Alignment(0, 0),
-      padding: const EdgeInsets.all(20),
-      margin: const EdgeInsets.all(10),
+            width: 200,
+            height: 200,
+            alignment: const Alignment(0, 0),
+            padding: const EdgeInsets.all(20),
+            margin: const EdgeInsets.all(10),
 //      transform: Matrix4.rotationZ(100),
 //      transform: Matrix4.skew(100,50),
 //      transform: Matrix4.rotationZ(100),// 形变
-      decoration: BoxDecoration(
-          color: Colors.red,
-          border: Border.all(width: 5, color: Colors.purple),
+            decoration: BoxDecoration(
+                color: Colors.red,
+                border: Border.all(width: 5, color: Colors.purple),
 //        borderRadius: BorderRadius.circular(100),
-          boxShadow: const [
-            BoxShadow(
-              color: Colors.orange,
-              offset: Offset(10, 10),
-              spreadRadius: 5, // 偏移量
-              blurRadius: 5, // 模糊度
-            ),
-            BoxShadow(
-              color: Colors.blue,
-              offset: Offset(-10, 10),
-              spreadRadius: 5, // 偏移量
-              blurRadius: 5, // 模糊度
-            )
-          ]),
-      child: const Text("hello world"),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.orange,
+                    offset: Offset(10, 10),
+                    spreadRadius: 5, // 偏移量
+                    blurRadius: 5, // 模糊度
+                  ),
+                  BoxShadow(
+                    color: Colors.blue,
+                    offset: Offset(-10, 10),
+                    spreadRadius: 5, // 偏移量
+                    blurRadius: 5, // 模糊度
+                  )
+                ]),
+            child: const Text("hello world"),
+          ),
+          PaddingDemo(),
+          AlignDemo()
+        ],
+      ),
     );
   }
 }
 
 class PaddingDemo extends StatelessWidget {
-  const PaddingDemo({
-    required Key key,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return const Column(
       children: <Widget>[
+        Text("Padding 间距"),
         Padding(
           // padding 设置间距
 //          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),// 垂直，水平
@@ -102,14 +77,14 @@ class PaddingDemo extends StatelessWidget {
           "你好啊，范金龙",
           style: TextStyle(
             fontSize: 30,
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.blue,
           ),
         ),
         Text(
           "你好啊，范金龙",
           style: TextStyle(
             fontSize: 30,
-            backgroundColor: Colors.red,
+            backgroundColor: Colors.yellow,
           ),
         ),
       ],
@@ -118,14 +93,11 @@ class PaddingDemo extends StatelessWidget {
 }
 
 class AlignDemo extends StatelessWidget {
-  const AlignDemo({
-    required Key key,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red,
+      color: Colors.green,
       height: 200,
       width: 200,
       child: const Align(

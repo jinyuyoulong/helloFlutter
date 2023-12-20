@@ -6,6 +6,8 @@ import 'package:hello_flutter/classes/day03/04_%E5%B8%83%E5%B1%80.dart';
 import 'package:hello_flutter/classes/day03/05_TextField.dart';
 import 'package:hello_flutter/getx/counter_get/view.dart';
 
+import '../classes/day03/06_布局单子组件.dart';
+
 class MainListView extends StatelessWidget {
   const MainListView({super.key});
 
@@ -18,8 +20,7 @@ class MainListView extends StatelessWidget {
         TextButton(onPressed: (){
           Navigator.push(context, MaterialPageRoute(builder: (context){
             return const TextViewPage();
-          }),
-          );
+          }));
         }, child: const Text("data")),
         TextButton(onPressed: (){
           Navigator.push(context, MaterialPageRoute(builder: (context){
@@ -41,6 +42,11 @@ class MainListView extends StatelessWidget {
             return const TextFieldPage();
           }));
         }, child: const Text("Textfield")),
+        ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return const SingleLayoutWidget();
+          }));
+        }, child: const Text("布局单子组件")),
         TextButton(onPressed: (){
           print("goto dio");
           Navigator.push(context, MaterialPageRoute(builder: (context){
