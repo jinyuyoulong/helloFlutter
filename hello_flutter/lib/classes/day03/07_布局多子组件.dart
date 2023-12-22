@@ -1,41 +1,13 @@
 import 'package:flutter/material.dart';
 
-main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MutiLayoutWidget extends StatefulWidget {
+  const MutiLayoutWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: "app title",
-      home: JLHomePage(),
-    );
-  }
+  _MutiLayoutWidgetState createState() => _MutiLayoutWidgetState();
 }
 
-class JLHomePage extends StatelessWidget {
-  const JLHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("基础Widget"),
-      ),
-      body: const JLHomeContent(),
-    );
-  }
-}
-
-class JLHomeContent extends StatefulWidget {
-  const JLHomeContent({super.key});
-
-  @override
-  _JLHomeContentState createState() => _JLHomeContentState();
-}
-
-class _JLHomeContentState extends State<JLHomeContent> {
+class _MutiLayoutWidgetState extends State<MutiLayoutWidget> {
   bool isFavorite = false;
 
   @override
@@ -54,50 +26,63 @@ class _JLHomeContentState extends State<JLHomeContent> {
 *
 * Positioned 定位
 * */
-    return Container(
-      child: Stack(
-        clipBehavior: Clip.none,
-        alignment: AlignmentDirectional.center,
-        children: <Widget>[
-          const Image(image: AssetImage("assets/images/a_dot_ham.png")),
-          Positioned(
-              left: 0,
-              right: 0,
-              bottom: 0,
-              child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  color: const Color.fromARGB(100, 100, 100, 100),
+    return Scaffold(
+      appBar: AppBar(title: const Text("多子组件"),),
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,// 左对齐
+          children: [
+            const Text("Stack层叠式"),
+            Stack(
+              clipBehavior: Clip.none,
+              alignment: AlignmentDirectional.center,
+              children: <Widget>[
+                const Image(image: AssetImage("assets/images/a_dot_ham.png")),
+                Positioned(
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        color: const Color.fromARGB(100, 100, 100, 100),
 //                  width: double.infinity,
 //                  height: 30,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      const Text(
-                        "范金龙最棒",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      IconButton(
-                          icon: Icon(Icons.favorite,
-                              color: isFavorite ? Colors.white : Colors.red),
-                          onPressed: () {
-                            setState(() {
-                              isFavorite = !isFavorite;
-                            });
-                          })
-                    ],
-                  ))),
-        ],
-      ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            const Text(
+                              "范金龙最棒",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            IconButton(
+                                icon: Icon(Icons.favorite,
+                                    color: isFavorite ? Colors.white : Colors.red),
+                                onPressed: () {
+                                  setState(() {
+                                    isFavorite = !isFavorite;
+                                  });
+                                })
+                          ],
+                        ))),
+              ],
+            ),
+            const Text("Row1 行"),
+            RowDemo(),
+            const Text("Row2"),
+            RowDemo2(),
+            const Text("Colum 列"),
+            ColumDemo(),
+          ],
+        ),
+      )
+
     );
   }
 }
 
 // Row 进阶知识
 class RowDemo2 extends StatelessWidget {
-  const RowDemo2({
-    required Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -142,10 +127,6 @@ class RowDemo2 extends StatelessWidget {
 }
 
 class ColumDemo extends StatelessWidget {
-  const ColumDemo({
-    required Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -206,10 +187,6 @@ Row基本使用
     * - stretch 先让交叉轴row占据较大的空间，将所有的子Widget交叉轴的高度，拉升到最大
     * */
 class RowDemo extends StatelessWidget {
-  const RowDemo({
-    required Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Row(

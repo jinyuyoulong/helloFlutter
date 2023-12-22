@@ -4,6 +4,8 @@ import 'package:hello_flutter/classes/day03/02_%E6%8C%89%E9%92%AEWidget.dart';
 import 'package:hello_flutter/classes/day03/03_%E5%9B%BE%E7%89%8701.dart';
 import 'package:hello_flutter/classes/day03/04_%E5%B8%83%E5%B1%80.dart';
 import 'package:hello_flutter/classes/day03/05_TextField.dart';
+import 'package:hello_flutter/classes/day03/07_%E5%B8%83%E5%B1%80%E5%A4%9A%E5%AD%90%E7%BB%84%E4%BB%B6.dart';
+import 'package:hello_flutter/classes/day03/08_listView_GridView.dart';
 import 'package:hello_flutter/getx/counter_get/view.dart';
 
 import '../classes/day03/06_布局单子组件.dart';
@@ -47,6 +49,16 @@ class MainListView extends StatelessWidget {
             return const SingleLayoutWidget();
           }));
         }, child: const Text("布局单子组件")),
+        OutlinedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return const MutiLayoutWidget();
+          }));
+        }, child: const Text("布局多子组件")),
+        OutlinedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return const ListGrideWidgetDemo();
+          }));
+        }, child: const Text("列表")),
         TextButton(onPressed: (){
           print("goto dio");
           Navigator.push(context, MaterialPageRoute(builder: (context){

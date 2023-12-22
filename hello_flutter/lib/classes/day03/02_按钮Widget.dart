@@ -29,7 +29,7 @@ class _ButtonsPageState extends State<ButtonsPage> {
             style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.orange)
             ),
-            child: const Text("平坦的Flat 按钮"),
+            child: const Text("平坦的Flat 按钮 TextBtn"),
             onPressed: ()=>print("flat click"),
           ),
           // OutlineButton 边框按钮
