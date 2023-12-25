@@ -1,32 +1,19 @@
 import 'package:flutter/material.dart';
 
-main() => runApp(const MyApp());
-
 /*
 * Widget:
 * 有状态Widget：StatefulWidget 在运行过程中有一些状态(data)需要改变
 * 无状态Widget: StatelessWidget 内容是确定没有状态(data)的改变的
 * */
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
+class ScrollListenor extends StatefulWidget {
+  const ScrollListenor({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: JLHomePage(),
-    );
-  }
+  _ScrollListenorState createState() => _ScrollListenorState();
 }
 
-class JLHomePage extends StatefulWidget {
-  const JLHomePage({super.key});
-
-  @override
-  _JLHomePageState createState() => _JLHomePageState();
-}
-
-class _JLHomePageState extends State<JLHomePage> {
+class _ScrollListenorState extends State<ScrollListenor> {
   /*
   * controller
   * 1. 可以设置默认offset

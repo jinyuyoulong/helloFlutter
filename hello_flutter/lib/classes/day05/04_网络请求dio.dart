@@ -16,13 +16,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: JLHomePage(),
+      home: DioNetworkDemo(),
     );
   }
 }
 
-class JLHomePage extends StatelessWidget {
-  const JLHomePage({super.key});
+class DioNetworkDemo extends StatelessWidget {
+  const DioNetworkDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +43,7 @@ class JLContentBody extends StatefulWidget {
 }
 
 class _JLContentBodyState extends State<JLContentBody> {
+  Dio _dio = Dio();
   @override
   void initState() {
     super.initState();
@@ -69,6 +70,19 @@ class _JLContentBodyState extends State<JLContentBody> {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("data");
+    return FutureBuilder(future: _dio.get("https://httpbin.org/get"),
+        builder: (BuildContext context, AsyncSnapshot snapshot){
+          // 请求完成
+          if (snapshot.connectionState == ConnectionState.done) {
+            Response response = snapshot.data;
+            //发生错误
+            if (snapshot.hasError) {
+              return Text(snapshot.error.toString());
+            }
+            return Text(response.data.toString());
+          }
+          //请求未完成时弹出loading
+          return const CircularProgressIndicator();
+        });
   }
 }
