@@ -68,11 +68,11 @@ class _MutiLayoutWidgetState extends State<MutiLayoutWidget> {
               ],
             ),
             const Text("Row1 行"),
-            RowDemo(),
+            const RowDemo(),
             const Text("Row2"),
-            RowDemo2(),
+            const RowDemo2(),
             const Text("Colum 列"),
-            ColumDemo(),
+            const ColumDemo(),
           ],
         ),
       )
@@ -83,6 +83,8 @@ class _MutiLayoutWidgetState extends State<MutiLayoutWidget> {
 
 // Row 进阶知识
 class RowDemo2 extends StatelessWidget {
+  const RowDemo2({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -127,6 +129,8 @@ class RowDemo2 extends StatelessWidget {
 }
 
 class ColumDemo extends StatelessWidget {
+  const ColumDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -187,6 +191,8 @@ Row基本使用
     * - stretch 先让交叉轴row占据较大的空间，将所有的子Widget交叉轴的高度，拉升到最大
     * */
 class RowDemo extends StatelessWidget {
+  const RowDemo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Row(

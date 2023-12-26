@@ -32,12 +32,8 @@ class HttpRequest {
       return handler.next(err);
     });
     List<Interceptor> iterable = [defaultInter];
-    if (iterable != null) {
-      iterable.add(inter);
-    } else {
-      print("拦截器未初始化");
-    }
-    // 统一添加到全局拦截中
+    iterable.add(inter);
+      // 统一添加到全局拦截中
     dio.interceptors.addAll(iterable);
     // 2. 发送网络请求
     try {
