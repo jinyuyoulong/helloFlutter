@@ -9,6 +9,7 @@ import 'package:hello_flutter/classes/day03/08_listView_GridView.dart';
 import 'package:hello_flutter/classes/day03/09_customScrollView.dart';
 import 'package:hello_flutter/classes/day05/03_scrollView%E6%BB%9A%E5%8A%A8%E7%9B%91%E5%90%AC.dart';
 import 'package:hello_flutter/classes/day05/04_%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82dio.dart';
+import 'package:hello_flutter/classes/douban/main.dart';
 import 'package:hello_flutter/getx/counter_get/view.dart';
 
 import '../classes/day03/06_布局单子组件.dart';
@@ -84,6 +85,11 @@ class MainListView extends StatelessWidget {
           }),
           );
         }, child: const Text("dio")),
+        ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return const DouBanHomePage();
+          }));
+        }, child: const Text("豆瓣"))
       ],
     );
 

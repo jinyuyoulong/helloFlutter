@@ -28,7 +28,7 @@ class JLContentBody extends StatefulWidget {
 }
 
 class _JLContentBodyState extends State<JLContentBody> {
-  Dio _dio = Dio();
+  final Dio _dio = Dio();
   @override
   void initState() {
     super.initState();

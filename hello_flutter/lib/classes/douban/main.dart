@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class DouBanHomePage extends StatelessWidget {
+  const DouBanHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,23 +9,14 @@ class MyApp extends StatelessWidget {
       title: "豆瓣",
       theme: ThemeData(
           primarySwatch: Colors.blue, splashColor: Colors.transparent),
-      home: const JLHomePage(),
-    );
-  }
-}
-
-class JLHomePage extends StatelessWidget {
-  const JLHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("列表测试"),
-      ),
-      body: const SizedBox(
-        width: 200,
-        child: DashedLine()
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("列表测试"),
+        ),
+        body: const SizedBox(
+            width: 200,
+            child: DashedLine()
+        ),
       ),
     );
   }

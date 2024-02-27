@@ -16,7 +16,7 @@ class ListGrideWidgetDemo extends StatelessWidget{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("列表视图"),),
-      body: Column(
+      body: const Column(
         children: [
             Row(
               mainAxisSize: MainAxisSize.min,
@@ -28,11 +28,11 @@ class ListGrideWidgetDemo extends StatelessWidget{
               ],
             ),
 
-          const Text("demo1"),
+          Text("demo1"),
           GridViewDemo1(),
-          const Text("demo2"),
+          Text("demo2"),
           GridViewDemo2(),
-          const Text("grid builder"),
+          Text("grid builder"),
           GridViewBuider(),
         ],
       ),
@@ -42,9 +42,11 @@ class ListGrideWidgetDemo extends StatelessWidget{
 }
 
 class GridViewDemo1 extends StatelessWidget {
+  const GridViewDemo1({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 150,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -66,9 +68,11 @@ class GridViewDemo1 extends StatelessWidget {
   }
 }
 class GridViewDemo2 extends StatelessWidget {
+  const GridViewDemo2({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 150,
       child: GridView(
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(// 设置最大宽度，自动计算个数
@@ -87,9 +91,11 @@ class GridViewDemo2 extends StatelessWidget {
   }
 }
 class GridViewBuider extends StatelessWidget {
+  const GridViewBuider({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: GridView.builder(// cell需要时加载
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -108,9 +114,11 @@ class GridViewBuider extends StatelessWidget {
 }
 
 class ListViewSeparated extends StatelessWidget {
+  const ListViewSeparated({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 150,
       width: 100,
       child: ListView.separated(// cell 是自适应高度。
@@ -133,9 +141,11 @@ class ListViewSeparated extends StatelessWidget {
   }
 }
 class ListViewBuilder extends StatelessWidget {
+  const ListViewBuilder({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 100,
       width: 100,
       child: ListView.builder(// 展示的时候在加载
@@ -149,9 +159,11 @@ class ListViewBuilder extends StatelessWidget {
   }
 }
 class ListViewDemo1 extends StatelessWidget {
+  const ListViewDemo1({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       width: 200,
       child: ListView(

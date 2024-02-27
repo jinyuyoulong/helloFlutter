@@ -9,34 +9,29 @@ class HttpRequest {
   static final Dio dio = Dio(baseOptions);
 
   static Future<T> request<T>(String url,
-      {
-        String method = "get",
-        required Map<String, dynamic>  parames,
-        required Interceptor inter
-      }) async {
+      {String method = "get",
+      required Map<String, dynamic> parames,
+      required Interceptor inter}) async {
     // 1. 创建dio
     // 私有参数配置
     final Options options = Options(method: method);
 
-    final Interceptor defaultInter = InterceptorsWrapper(onRequest: (request, requestInterceptorHandler) {
+    final Interceptor defaultInter =
+        InterceptorsWrapper(onRequest: (request, requestInterceptorHandler) {
       print("请求拦截 ");
       print("${request.method} | ${request.path}");
       return requestInterceptorHandler.next(request);
-    }, onResponse: (response,responseInterceptorHandler) {
+    }, onResponse: (response, responseInterceptorHandler) {
       print("响应拦截");
       print('${response.statusCode} ${response.statusCode} ${response.data}');
       return responseInterceptorHandler.next(response);
-    }, onError: (err,handler) {
+    }, onError: (err, handler) {
       print("错误拦截");
       print(err.message);
       return handler.next(err);
     });
     List<Interceptor> iterable = [defaultInter];
-    if (iterable != null) {
-      iterable.add(inter);
-    } else {
-      print("拦截器未初始化");
-    }
+    iterable.add(inter);
     // 统一添加到全局拦截中
     dio.interceptors.addAll(iterable);
     // 2. 发送网络请求

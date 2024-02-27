@@ -13,13 +13,13 @@ class CustomScrollWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("scroll view"),),
-      body: Column(
+      body: const Column(
         children: [
-          Container(
-            height: 300,
+          SizedBox(
+            height: 290,
             child: CustomScrollView1(),
           ),
-          Container(
+          SizedBox(
             height: 300,
             child: CustomScrollMixView(),
           ),
@@ -30,6 +30,8 @@ class CustomScrollWidget extends StatelessWidget {
 }
 
 class CustomScrollMixView extends StatelessWidget {
+  const CustomScrollMixView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView( // 多个sliver

@@ -45,8 +45,8 @@ class _SingleLayoutWidgetState extends State<SingleLayoutWidget> {
                 ]),
             child: const Text("hello world"),
           ),
-          PaddingDemo(),
-          AlignDemo()
+          const PaddingDemo(),
+          const AlignDemo()
         ],
       ),
     );
@@ -54,6 +54,8 @@ class _SingleLayoutWidgetState extends State<SingleLayoutWidget> {
 }
 
 class PaddingDemo extends StatelessWidget {
+  const PaddingDemo({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +95,8 @@ class PaddingDemo extends StatelessWidget {
 }
 
 class AlignDemo extends StatelessWidget {
+  const AlignDemo({super.key});
+
 
   @override
   Widget build(BuildContext context) {
