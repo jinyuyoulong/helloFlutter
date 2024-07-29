@@ -23,7 +23,7 @@ main(List<String> args) {
 Future<String> getNetworkData() {
   // sleep(Duration(seconds: 5));
   // return "Hello";
-  // 1. 将耗时的操作包裹到Future的回调函数中
+  // 1. 将耗时的操作包裹到Future的回调函数中，future 方法不堵塞主线程
   // 1.1 只要有返回结果，那么就执行future对应的then的回调
   // 1.2 如果没有结果返回(有错误信息),需要在Future回调中抛出一个异常(Promise-reject)
   return Future<String>(() {

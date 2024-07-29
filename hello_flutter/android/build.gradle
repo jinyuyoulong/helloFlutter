@@ -1,8 +1,14 @@
 buildscript {
     ext.kotlin_version = '1.7.10'
     repositories {
-        google()
-        mavenCentral()
+//        google()
+//        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven {
+//            allowInsecureProtocol = true
+            url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'https://download.flutter.io'}
     }
 
     dependencies {
@@ -13,8 +19,14 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
-        mavenCentral()
+//        google()
+//        mavenCentral()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven {
+            allowInsecureProtocol = true
+            url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        maven { url 'https://download.flutter.io'}
     }
 }
 
@@ -26,6 +38,6 @@ subprojects {
     project.evaluationDependsOn(':app')
 }
 
-task clean(type: Delete) {
+tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }

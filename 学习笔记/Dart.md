@@ -191,6 +191,12 @@ void sayHello3(String name, {int age, double height = 0}) {
 
 ### future == promise
 
+- **Promise** 是你对别人所作的承诺。
+
+- 在 **Future** 中，你可能会选择兑现（解决）这个 promise，或者拒绝它。
+
+  如果我们使用上面的定义，Futures & Promises 变成了一枚硬币的正反面。一个 Promise 被构造，然后返回一个 Future，在那里它可以被用来在稍后提取信息。
+
 JS中Promise对象表示异步操作的最终完成（或失败）及其结果值，Dart中使用Future来表示异步操作。
 
 ```dart

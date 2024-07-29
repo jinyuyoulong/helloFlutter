@@ -1,8 +1,5 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_flutter/page/list_view.dart';
-import 'package:hello_flutter/service/http_echo_model.dart';
-import 'package:hello_flutter/service/http_request.dart';
 
 class JLHomePage extends StatelessWidget {
   const JLHomePage({super.key});

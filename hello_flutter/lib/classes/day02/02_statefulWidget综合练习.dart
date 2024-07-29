@@ -65,7 +65,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         ElevatedButton(
-            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red)),
+            style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.red)),
             onPressed: (){
               setState(() {
 //                相当于匿名函数，这里，外边设置++也可以
@@ -74,7 +74,7 @@ class _JLHomeContentState extends State<JLHomeContent> {
             },
             child: const Text("+", style: TextStyle(fontSize: 20, color: Colors.white),)),
         ElevatedButton(
-            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue)),
+            style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.blue)),
             onPressed: (){
               setState(() {
                 _counter --;

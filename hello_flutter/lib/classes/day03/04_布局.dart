@@ -56,10 +56,10 @@ class ButtonExtensionDemo extends StatelessWidget {
           child: TextButton(
             style: ButtonStyle(
               //            清除内边距
-                padding: MaterialStateProperty.all(const EdgeInsets.all(0)),
+                padding: WidgetStateProperty.all(const EdgeInsets.all(0)),
                 //              清除外边距
                 tapTargetSize:  MaterialTapTargetSize.shrinkWrap,
-                backgroundColor: MaterialStateProperty.all(Colors.red)),
+                backgroundColor: WidgetStateProperty.all(Colors.red)),
               onPressed: (){},
               child: const Text("FaltBtn1")
           ),
@@ -68,7 +68,7 @@ class ButtonExtensionDemo extends StatelessWidget {
 
 //          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
           onPressed: (){},
-          style: ButtonStyle(foregroundColor: MaterialStateProperty.all(Colors.red)),
+          style: ButtonStyle(foregroundColor: WidgetStateProperty.all(Colors.red)),
           child: const Text("FaltB  tn2"),
         ),
       ],

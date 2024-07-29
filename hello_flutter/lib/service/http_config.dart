@@ -1,4 +1,4 @@
 class HttpConfig {
   static const String baseUrl = "https://httpbin.org";
-  static const int timeout = 5000;
+  static const Duration timeout = Duration(milliseconds: 60000);
 }

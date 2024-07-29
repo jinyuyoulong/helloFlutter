@@ -65,7 +65,7 @@ class _TextFieldPageState extends State<TextFieldPage> {
 
                     });
                   },
-                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blue)),
+                  style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.blue)),
                   child: const Text("登 录",style: TextStyle(fontSize: 20,color: Colors.white),),
 
                 ),

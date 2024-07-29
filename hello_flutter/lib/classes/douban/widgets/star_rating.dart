@@ -12,7 +12,7 @@ class StartRating extends StatefulWidget {
 
   StartRating({super.key, 
     required this.rating,
-    this.maxRating = 10,
+    this.maxRating = 10,// 满分 10 分
     this.count = 5,
     this.size = 30,
     this.unselectedColor = const Color(0xffbbbbbb),
@@ -47,14 +47,14 @@ class _StartRatingState extends State<StartRating> {
     // 1. 创建stars
     List<Widget> stars = [];
     final star = widget.selectedImage;
-    // 2.构建满填充的star
+    // 2.构建完全填充的star
     double oneValue = widget.maxRating / widget.count;
-    int entireCount = (widget.rating / oneValue ).floor();
+    int entireCount = (widget.rating / oneValue ).floor();// 地板 向下取整，ceil 天花板 向上取整
     for (int i = 0; i < entireCount; i ++) {
       stars.add(star);
     }
-    // 3. 构建部分填充的star
-    double leftWidth = (widget.rating % oneValue) * widget.size;
+    // 3. 构建部分填充的star 3.5 - 3 = 0.5 * widget.size
+    double leftWidth = (widget.rating / oneValue - entireCount) * widget.size;
     final halfStar = ClipRect(
       clipper: JLStarClipper(leftWidth),
       child: star,
@@ -79,7 +79,7 @@ class JLStarClipper extends CustomClipper<Rect> {
   }
 
   @override
-  bool shouldReclip(covariant CustomClipper oldClipper) {
-    return oldClipper != width;
+  bool shouldReclip(JLStarClipper oldClipper) {
+    return oldClipper.width != width;
   }
 }

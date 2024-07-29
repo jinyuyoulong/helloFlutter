@@ -39,7 +39,7 @@ class HttpRequest {
       Response response =
           await dio.request(url, queryParameters: parames, options: options);
       return response.data;
-    } on DioError catch (e) {
+    } on DioException catch (e) {
       return Future.error(e);
     }
   }

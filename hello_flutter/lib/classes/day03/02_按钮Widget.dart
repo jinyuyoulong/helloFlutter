@@ -18,8 +18,8 @@ class _ButtonsPageState extends State<ButtonsPage> {
           ElevatedButton(
             style: ButtonStyle(
               // foregroundColor: MaterialStateProperty.all(Colors.grey),
-                backgroundColor: MaterialStateProperty.all(Colors.grey),
-                textStyle: MaterialStateProperty.all(const TextStyle(color: Colors.white))
+                backgroundColor: WidgetStateProperty.all(Colors.grey),
+                textStyle: WidgetStateProperty.all(const TextStyle(color: Colors.white))
             ),
             onPressed: ()=> print("dd"),
             child: const Text("ElevatedButton 高地按钮"),
@@ -27,7 +27,7 @@ class _ButtonsPageState extends State<ButtonsPage> {
           // TextButton
           TextButton(
             style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.orange)
+                backgroundColor: WidgetStateProperty.all(Colors.orange)
             ),
             child: const Text("平坦的Flat 按钮 TextBtn"),
             onPressed: ()=>print("flat click"),
@@ -40,10 +40,10 @@ class _ButtonsPageState extends State<ButtonsPage> {
           // 4. floatingActionButton 浮动按钮
           // 5. 自定义button：图标-文字-背景-圆角
           TextButton(
-            style: ButtonStyle(shape: MaterialStateProperty.all(RoundedRectangleBorder(
+            style: ButtonStyle(shape: WidgetStateProperty.all(RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8)
             )),
-                backgroundColor: MaterialStateProperty.all(Colors.purple)),
+                backgroundColor: WidgetStateProperty.all(Colors.purple)),
             child: const Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[

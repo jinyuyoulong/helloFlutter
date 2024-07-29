@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'logic.dart';
 
 class CounterGetPage extends StatelessWidget {
-  CounterGetPage({Key? key}) : super(key: key);
+  CounterGetPage({super.key});
 
   final logic = Get.put(CounterGetLogic());
 
