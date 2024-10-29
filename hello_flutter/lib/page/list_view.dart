@@ -23,6 +23,11 @@ class MainListView extends StatelessWidget {
       shrinkWrap: true,
       itemExtent: 50.0,
       children: <Widget>[
+        ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context){
+            return const DouBanHomePage();
+          }));
+        }, child: const Text("豆瓣")),
         TextButton(onPressed: (){
           Navigator.push(context, MaterialPageRoute(builder: (context){
             return const TextViewPage();
@@ -85,11 +90,7 @@ class MainListView extends StatelessWidget {
           }),
           );
         }, child: const Text("dio")),
-        ElevatedButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context){
-            return const DouBanHomePage();
-          }));
-        }, child: const Text("豆瓣"))
+
       ],
     );
 
