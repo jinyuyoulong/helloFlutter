@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/service/home_request.dart';
 
 class JLHomeContent extends StatefulWidget {
   const JLHomeContent({super.key});
@@ -8,10 +9,22 @@ class JLHomeContent extends StatefulWidget {
 }
 
 class _JLHomeContentState extends State<JLHomeContent> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // 发送网络请求
+    HomeRequest.requestMoveList(0);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("首页内容", style: TextStyle(fontSize: 32, color: Colors.green),),
+    return ListView.builder(
+        itemCount: 30,
+        itemBuilder: (ctx, int index) {
+          return ListTile(title:  Text("item$index"),);
+        }
     );
   }
 }

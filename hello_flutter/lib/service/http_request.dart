@@ -10,8 +10,8 @@ class HttpRequest {
 
   static Future<T> request<T>(String url,
       {String method = "get",
-      required Map<String, dynamic> parames,
-      required Interceptor inter}) async {
+        Map<String, dynamic>? parames,
+        Interceptor? inter}) async {
     // 1. 创建dio
     // 私有参数配置
     final Options options = Options(method: method);
@@ -30,10 +30,13 @@ class HttpRequest {
       print(err.message);
       return handler.next(err);
     });
-    List<Interceptor> iterable = [defaultInter];
-    iterable.add(inter);
-    // 统一添加到全局拦截中
-    dio.interceptors.addAll(iterable);
+    if (inter != null) {
+      List<Interceptor> iterable = [defaultInter];
+      iterable.add(inter);
+      // 统一添加到全局拦截中
+      dio.interceptors.addAll(iterable);
+    }
+
     // 2. 发送网络请求
     try {
       Response response =

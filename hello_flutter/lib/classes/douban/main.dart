@@ -8,6 +8,7 @@ class DouBanHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "豆瓣",
+      // debugShowCheckedModeBanner: false,// 取消 debug tag
       theme: ThemeData(
           primarySwatch: Colors.blue,
           splashColor: Colors.transparent,
