@@ -6,15 +6,16 @@ class DouBanHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "豆瓣",
-      // debugShowCheckedModeBanner: false,// 取消 debug tag
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,// 取消所有按钮的按住高亮效果。设置为透明
-      ),
-      home: const JLMainPage(),
-    );
+    return const JLMainPage();
+    //   MaterialApp(
+    //   title: "豆瓣",
+    //   // debugShowCheckedModeBanner: false,// 取消 debug tag
+    //   theme: ThemeData(
+    //       primarySwatch: Colors.blue,
+    //       splashColor: Colors.transparent,
+    //     highlightColor: Colors.transparent,// 取消所有按钮的按住高亮效果。设置为透明
+    //   ),
+    //   home: const JLMainPage(),
+    // );
   }
 }
