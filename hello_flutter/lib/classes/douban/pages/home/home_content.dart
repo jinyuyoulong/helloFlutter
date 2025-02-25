@@ -15,7 +15,9 @@ class _JLHomeContentState extends State<JLHomeContent> {
     // TODO: implement initState
     super.initState();
     // 发送网络请求
-    HomeRequest.requestMoveList(0);
+    HomeRequest.requestMoveList(0).then((res){
+      print(res);
+    });
   }
 
   @override
