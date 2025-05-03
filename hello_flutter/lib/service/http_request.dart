@@ -10,8 +10,8 @@ class HttpRequest {
 
   static Future<T> request<T>(String url,
       {String method = "get",
-        Map<String, dynamic>? parames,
-        Interceptor? inter}) async {
+      Map<String, dynamic>? parames,
+      Interceptor? inter}) async {
     // 1. 创建dio
     // 私有参数配置
     final Options options = Options(method: method);

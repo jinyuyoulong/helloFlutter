@@ -10,6 +10,6 @@ class MallPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("Mall");
+    return const Text("Mall");
   }
 }

@@ -9,9 +9,9 @@ class JLSubjectPage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(onPressed: (){
           Navigator.of(context).pop();
-        }, icon: Icon(Icons.arrow_back)),
-        title: Text("书影音"),),
-      body: Center(
+        }, icon: const Icon(Icons.arrow_back)),
+        title: const Text("书影音"),),
+      body: const Center(
         child: Text("书影音"),
       ),
     );

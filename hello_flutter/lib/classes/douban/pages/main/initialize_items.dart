@@ -17,8 +17,8 @@ JLBottomBarItem("我的", "profile"),
 ];
 
 List<Widget> pages = [
-  JLHomePage(),
-  JLSubjectPage(),
+  const JLHomePage(),
+  const JLSubjectPage(),
   GroupPage(),
   MallPage(),
   ProfilePage(),
